@@ -1,1 +1,1 @@
-org.springframework.test.context.ContextCustomizerFactory = com.conva.icicle.config.TestContainersSpringContextCustomizerFactory
+org.springframework.test.context.ContextCustomizerFactory = se.conva.icicle.config.TestContainersSpringContextCustomizerFactory

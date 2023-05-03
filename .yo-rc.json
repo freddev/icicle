@@ -30,7 +30,7 @@
     "microfrontends": [],
     "nativeLanguage": "en",
     "otherModules": [],
-    "packageName": "com.conva.icicle",
+    "packageName": "se.conva.icicle",
     "pages": [],
     "prodDatabaseType": "postgresql",
     "reactive": false,
