@@ -29,7 +29,6 @@ import org.zalando.problem.StatusType;
 import org.zalando.problem.spring.web.advice.ProblemHandling;
 import org.zalando.problem.spring.web.advice.security.SecurityAdviceTrait;
 import org.zalando.problem.violations.ConstraintViolationProblem;
-import se.conva.icicle.service.UsernameAlreadyUsedException;
 import tech.jhipster.config.JHipsterConstants;
 import tech.jhipster.web.util.HeaderUtil;
 
@@ -130,7 +129,10 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
     }
 
     @ExceptionHandler
-    public ResponseEntity<Problem> handleUsernameAlreadyUsedException(UsernameAlreadyUsedException ex, NativeWebRequest request) {
+    public ResponseEntity<Problem> handleUsernameAlreadyUsedException(
+        se.conva.icicle.service.UsernameAlreadyUsedException ex,
+        NativeWebRequest request
+    ) {
         LoginAlreadyUsedException problem = new LoginAlreadyUsedException();
         return create(
             problem,

@@ -23,7 +23,7 @@
             "customWebpackConfig": {
               "path": "./webpack/webpack.custom.js"
             },
-            "outputPath": "build/resources/main/static/",
+            "outputPath": "target/classes/static/",
             "index": "src/main/webapp/index.html",
             "main": "src/main/webapp/main.ts",
             "polyfills": "src/main/webapp/polyfills.ts",
@@ -69,8 +69,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "instrumenter": {}
+            }
           },
           "defaultConfiguration": "production"
         },
@@ -102,7 +101,7 @@
   "cli": {
     "cache": {
       "enabled": true,
-      "path": "./build/angular/",
+      "path": "./target/angular/",
       "environment": "all"
     },
     "packageManager": "npm"

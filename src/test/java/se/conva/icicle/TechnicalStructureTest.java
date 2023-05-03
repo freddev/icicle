@@ -8,8 +8,6 @@ import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
-import se.conva.icicle.config.ApplicationProperties;
-import se.conva.icicle.config.Constants;
 
 @AnalyzeClasses(packagesOf = IcicleApp.class, importOptions = DoNotIncludeTests.class)
 class TechnicalStructureTest {
@@ -33,7 +31,7 @@ class TechnicalStructureTest {
 
         .ignoreDependency(belongToAnyOf(IcicleApp.class), alwaysTrue())
         .ignoreDependency(alwaysTrue(), belongToAnyOf(
-            Constants.class,
-            ApplicationProperties.class
+            se.conva.icicle.config.Constants.class,
+            se.conva.icicle.config.ApplicationProperties.class
         ));
 }

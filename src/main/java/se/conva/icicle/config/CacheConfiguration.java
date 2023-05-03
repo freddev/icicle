@@ -12,10 +12,6 @@ import org.springframework.boot.info.GitProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.*;
-import se.conva.icicle.domain.Authority;
-import se.conva.icicle.domain.PersistentToken;
-import se.conva.icicle.domain.User;
-import se.conva.icicle.repository.UserRepository;
 import tech.jhipster.config.JHipsterProperties;
 import tech.jhipster.config.cache.PrefixedKeyGenerator;
 
@@ -47,13 +43,12 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
-            createCache(cm, UserRepository.USERS_BY_LOGIN_CACHE);
-            createCache(cm, UserRepository.USERS_BY_EMAIL_CACHE);
-            createCache(cm, User.class.getName());
-            createCache(cm, Authority.class.getName());
-            createCache(cm, User.class.getName() + ".authorities");
-            createCache(cm, PersistentToken.class.getName());
-            createCache(cm, User.class.getName() + ".persistentTokens");
+            createCache(cm, se.conva.icicle.repository.UserRepository.USERS_BY_LOGIN_CACHE);
+            createCache(cm, se.conva.icicle.repository.UserRepository.USERS_BY_EMAIL_CACHE);
+            createCache(cm, se.conva.icicle.domain.User.class.getName());
+            createCache(cm, se.conva.icicle.domain.Authority.class.getName());
+            createCache(cm, se.conva.icicle.domain.User.class.getName() + ".authorities");
+            createCache(cm, se.conva.icicle.domain.TimeEntry.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

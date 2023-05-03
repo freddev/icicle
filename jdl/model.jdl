@@ -1,0 +1,22 @@
+
+application {
+  config {
+    baseName icicle,
+    applicationType monolith,
+    packageName se.conva.icicle,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity TimeEntry {
+    date LocalDate required,
+    minutesWorked Integer required,
+    taskName String required,
+}
+
+relationship ManyToOne {
+  TimeEntry{user} to User
+}

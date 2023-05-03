@@ -18,9 +18,10 @@ import se.conva.icicle.config.ApplicationProperties;
 import se.conva.icicle.config.CRLFLogConverter;
 import tech.jhipster.config.DefaultProfileUtil;
 import tech.jhipster.config.JHipsterConstants;
+import tech.jhipster.config.JHipsterProperties;
 
 @SpringBootApplication
-@EnableConfigurationProperties({ LiquibaseProperties.class, ApplicationProperties.class })
+@EnableConfigurationProperties({ LiquibaseProperties.class, ApplicationProperties.class, JHipsterProperties.class })
 public class IcicleApp {
 
     private static final Logger log = LoggerFactory.getLogger(IcicleApp.class);

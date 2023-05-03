@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.conva.icicle.domain.User;
@@ -122,12 +121,12 @@ class UserMapperTest {
 
     @Test
     void userDTOToUserMapWithNullUserShouldReturnNull() {
-        Assertions.assertThat(userMapper.userDTOToUser(null)).isNull();
+        assertThat(userMapper.userDTOToUser(null)).isNull();
     }
 
     @Test
     void testUserFromId() {
-        Assertions.assertThat(userMapper.userFromId(DEFAULT_ID).getId()).isEqualTo(DEFAULT_ID);
-        Assertions.assertThat(userMapper.userFromId(null)).isNull();
+        assertThat(userMapper.userFromId(DEFAULT_ID).getId()).isEqualTo(DEFAULT_ID);
+        assertThat(userMapper.userFromId(null)).isNull();
     }
 }

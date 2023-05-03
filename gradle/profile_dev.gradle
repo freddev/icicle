@@ -1,7 +1,7 @@
 sourceSets {
     test {
         java {
-            exclude 'com/conva/icicle/config/PostgreSqlTestContainer.java'
+            exclude 'se/conva/icicle/config/PostgreSqlTestContainer.java'
         }
     }
 }

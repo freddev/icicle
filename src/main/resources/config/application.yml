@@ -95,7 +95,7 @@ spring:
     name: icicle
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
-    # Otherwise, it will be filled in by gradle when building the JAR file
+    # Otherwise, it will be filled in by maven when building the JAR file
     # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
     active: #spring.profiles.active#
     group:
@@ -182,7 +182,7 @@ jhipster:
   #   allowed-origins: "http://localhost:8100,http://localhost:9000"
   #   allowed-methods: "*"
   #   allowed-headers: "*"
-  #   exposed-headers: "Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params"
+  #   exposed-headers: "Authorization,Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params"
   #   allow-credentials: true
   #   max-age: 1800
   mail:
@@ -201,6 +201,16 @@ jhipster:
     license-url:
   security:
     content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+    remember-me:
+      key: 0b32a651e6a67d5731e869dc136fc301b0a2c0e4
+    authentication:
+      jwt:
+        # The secret token should be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line).
+        # If both properties are configured, the `secret` property has a higher priority than the `base64-secret` property.
+        #        secret: # JWT secret key in clear text (not recommended)
+        base64-secret: aGVtbGlnYWNvbnZhCg==
+        token-validity-in-seconds: 86400 # Token is valid 24 hours
+        token-validity-in-seconds-for-remember-me: 2592000 # Remember me token is valid 30 days
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

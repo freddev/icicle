@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="timeEntry">
+      <h2 data-cy="timeEntryDetailsHeading"><span jhiTranslate="icicleApp.timeEntry.detail.title">Time Entry</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ timeEntry.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="icicleApp.timeEntry.date">Date</span></dt>
+        <dd>
+          <span>{{ timeEntry.date | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="icicleApp.timeEntry.minutesWorked">Minutes Worked</span></dt>
+        <dd>
+          <span>{{ timeEntry.minutesWorked }}</span>
+        </dd>
+        <dt><span jhiTranslate="icicleApp.timeEntry.taskName">Task Name</span></dt>
+        <dd>
+          <span>{{ timeEntry.taskName }}</span>
+        </dd>
+        <dt><span jhiTranslate="icicleApp.timeEntry.user">User</span></dt>
+        <dd>
+          <span>{{ timeEntry.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/time-entry', timeEntry.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
